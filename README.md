@@ -28,11 +28,11 @@ import AvatarInitials from "@ducnd164/avatar-initials";
 
 ### Props
 
-| Prop       | Type               | Default | Description                                   |
-|------------|--------------------|---------|-----------------------------------------------|
-| `fullName` | `string`           | `""`    | The full name to generate initials.          |
-| `size`     | `number \| string` | `44`    | The size of the avatar.                      |
-| `onlyColor`| `boolean`          | `false` | If `true`, the avatar will use a default color instead of a name-based color. |
+| Prop        | Type               | Default | Description                                                                   |
+| ----------- | ------------------ | ------- | ----------------------------------------------------------------------------- |
+| `fullName`  | `string`           | `""`    | The full name to generate initials.                                           |
+| `size`      | `number \| string` | `44`    | The size of the avatar.                                                       |
+| `onlyColor` | `boolean`          | `false` | If `true`, the avatar will use a default color instead of a name-based color. |
 
 ---
 
@@ -47,7 +47,7 @@ import AvatarInitials from "@ducnd164/avatar-initials";
 
 ## 🔗 License
 
-MIT License © 2025 [ducnd164](https://github.com/ducdev2k1)
+Giấy phép MIT © 2025 [ducdev2k1](https://github.com/ducdev2k1)
 
 ---
 
@@ -81,11 +81,11 @@ import AvatarInitials from "@ducnd164/avatar-initials";
 
 ### Props
 
-| Prop       | Loại               | Mặc định | Mô tả                                    |
-|------------|--------------------|---------|------------------------------------------|
-| `fullName` | `string`           | `""`    | Tên đầy đủ để tạo chữ viết tắt.         |
-| `size`     | `number \| string` | `44`    | Kích thước của avatar.                   |
-| `onlyColor`| `boolean`          | `false` | Nếu `true`, avatar sẽ sử dụng màu cố định thay vì màu dựa trên tên. |
+| Prop        | Loại               | Mặc định | Mô tả                                                               |
+| ----------- | ------------------ | -------- | ------------------------------------------------------------------- |
+| `fullName`  | `string`           | `""`     | Tên đầy đủ để tạo chữ viết tắt.                                     |
+| `size`      | `number \| string` | `44`     | Kích thước của avatar.                                              |
+| `onlyColor` | `boolean`          | `false`  | Nếu `true`, avatar sẽ sử dụng màu cố định thay vì màu dựa trên tên. |
 
 ---
 
@@ -101,4 +101,3 @@ import AvatarInitials from "@ducnd164/avatar-initials";
 ## 🔗 Giấy phép
 
 Giấy phép MIT © 2025 [ducdev2k1](https://github.com/ducdev2k1)
-
