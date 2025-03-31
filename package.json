@@ -27,7 +27,15 @@
     "initials",
     "vue3"
   ],
-  "author": "DucND",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ducdev2k1/avatar-initials.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ducdev2k1/avatar-initials/issues"
+  },
+  "homepage": "https://github.com/ducdev2k1/avatar-initials#readme",
+  "author": "ducdev2k1",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
