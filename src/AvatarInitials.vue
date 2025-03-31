@@ -5,6 +5,7 @@ interface IAvatar {
   size?: number | string;
   fullName: string;
   onlyColor?: boolean;
+  defaultColor?: string;
 }
 
 const props = withDefaults(defineProps<IAvatar>(), {
@@ -14,7 +15,7 @@ const props = withDefaults(defineProps<IAvatar>(), {
 });
 
 const size = computed(() => props.size);
-const defaultColor = ref<string>("#0A6CCB");
+const defaultColor: string = computed(() => props.defaultColor || "#0A6CCB");
 const onlyColor = computed(() => props.onlyColor);
 
 // Hàm tạo màu theo tên
