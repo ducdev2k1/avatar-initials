@@ -28,13 +28,31 @@ jobs:
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          
+
       - name: Send Telegram notification
-        if: success()  # Chỉ gửi thông báo nếu bước publish thành công
+        if: success() # Chỉ gửi thông báo nếu bước publish thành công
         run: |
           curl -s -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage \
-          -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
-          -d text="🎉 Package đã được publish lên npm thành công! Tên package: ${{ github.repository }} - Commit: ${{ github.sha }}"
+            -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
+            -d parse_mode=HTML \
+            -d text="✅ Package đã được publish lên npm thành công!%0A
+              Tên package: ${{ github.repository }} - Commit: ${{ github.sha }}%0A
+              Repository: <a href='https://github.com/${{ github.repository }}'>https://github.com/${{ github.repository }}</a>%0A
+              Workflow Run: <a href='https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'>https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}</a>"
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
+      - name: Send Telegram notification on failure
+        if: failure() # Chỉ chạy nếu một bước trước đó thất bại
+        run: |
+          curl -s -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage \
+            -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
+            -d parse_mode=HTML \
+            -d text="❌ Publish package lên NPM thất bại!%0A
+              Tên package: ${{ github.repository }} - Commit: ${{ github.sha }}%0A
+              Repository: <a href='https://github.com/${{ github.repository }}'>https://github.com/${{ github.repository }}</a>%0A
+              Workflow Run: <a href='https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'>https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}</a>"
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
