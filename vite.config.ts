@@ -9,6 +9,7 @@ export default defineConfig({
       entry: "src/index.ts",
       name: "AvatarInitials",
       fileName: (format) => `avatar-initials.${format}.js`,
+      formats: ['es', 'umd']
     },
     rollupOptions: {
       external: ["vue"],
